@@ -90,6 +90,7 @@ function initDist(data) {
         dist[i][j] = 0;
       }
     }
+	console.log(1,dist);
     return dist;
 }
 
@@ -107,6 +108,7 @@ function euclideanDist(data) {
         dist[j][i] = dist[i][j];
       }
     }
+	console.log(11,dist);
     return dist;
 }
 
@@ -184,6 +186,7 @@ function binTrans(data) {
 	    }
 	}
     }
+	console.log(111,data);
     return data;
 }
 
@@ -192,6 +195,7 @@ function computeDistances(data, distFunc, transFunc) {
     //window.alert(transFunc);
     dist = eval(distFunc)(eval(transFunc)(data));
     dist = normDist(data, dist);
+	console.log(11111,dist);
     return dist;
 }
 
