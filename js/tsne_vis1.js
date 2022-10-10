@@ -198,7 +198,7 @@ function computeDistances(data, distFunc, transFunc) {
 function updateEmbedding() {
     var Y = tsne.getSolution();
     svg.selectAll('.u')
-	.attr("transform", function(d, i) { console.log(d,i); return "translate(" +
+	.attr("transform", function(d, i) { return "translate(" +
                                             ((Y[i][0] * 7 * ss + tx) + 450) + "," +
                                             ((Y[i][1] * 7 * ss + ty) + 300) + ")"; });
 }
@@ -251,7 +251,7 @@ function drawEmbedding() {
 	.attr("text-anchor", "right")
 	.style("font-size", "12px")
 	.text(function(d) {
-            return d.name;
+           console.log(d);  return d.name;
         });
     
     // Add zoom functionality to map
