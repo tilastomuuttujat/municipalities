@@ -75,6 +75,7 @@ function init(data) {
 	console.log(dists);
     all_labels = new Array(data.length);
     for(var i = 0; i < data.length; i++) { all_labels[i] = data[i]["label"]; }
+	console.log(data);
     drawEmbedding();
     runner = setInterval(step, 0);
 }
@@ -90,7 +91,6 @@ function initDist(data) {
         dist[i][j] = 0;
       }
     }
-	console.log(1,dist);
     return dist;
 }
 
@@ -108,7 +108,6 @@ function euclideanDist(data) {
         dist[j][i] = dist[i][j];
       }
     }
-	console.log(11,dist);
     return dist;
 }
 
