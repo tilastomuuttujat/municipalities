@@ -49,7 +49,7 @@ function getData() {
 	    }
 	}
     }
-    console.log(rawData);
+    //console.log(rawData);
     return(rawData)
 }
 
@@ -72,6 +72,7 @@ function init(data) {
     //dists = computeDistances(data, distFunc, transFunc);
     dists = computeDistances(data, document.getElementById("param-distance").value, document.getElementById("param-transform").value);
     tsne.initDataDist(dists); 
+	console.log(dists);
     all_labels = new Array(data.length);
     for(var i = 0; i < data.length; i++) { all_labels[i] = data[i]["label"]; }
     drawEmbedding();
