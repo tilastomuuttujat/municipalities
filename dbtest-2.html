@@ -267,7 +267,7 @@
 
 			    <div class="row">
 			      <div class="col-md-6">
-				<p><div id="run-button"><button class="btn btn-primary btn-block" onclick="diagram.get_tsne1.init(getData());">Run</button></div></p>
+				<p><div id="run-button"><button class="btn btn-primary btn-block" onclick="diagram.get_tsne1.reinit();">Run</button></div></p>
 			      </div>
 			      <div class="col-md-6">
 				<p><div id="save-button"><button class="btn btn-primary btn-block" onclick="diagram.get_tsne1.downloadSvg();">Export Image</button></div></p>
@@ -304,6 +304,10 @@
 	</div>
 
 <script>
+var color = d3.scale.ordinal()
+	.range(["#EFB605", "#E58903", "#E01A25", "#C20049", "#991C71", "#66489F", "#2074A0", "#10A66E", "#7EB852"])
+	.domain(["Africa | North & East", "Africa | South & West", "America | North & Central", "America | South", "Asia | East & Central", "Asia | South & West", "Europe | North & West", "Europe | South & East", "Oceania"]);
+							 
 dataInit = [];
 var round = 0;
 var values = [];
@@ -1116,6 +1120,11 @@ var solution = [];
    $('#param-learningrate').bind('input', function () { $('#param-learningrate-value').text($('#param-learningrate').val()); });
    $('#param-maxiter').bind('input', function () { $('#param-maxiter-value').text($('#param-maxiter').val()); });
 
+function reinit() {
+init(getData());
+}		
+		
+		
    function downloadSvg() {
 // Download sag courtesy of https://stackoverflow.com/questions/23218174/how-do-i-save-export-an-svg-file-after-creating-an-svg-with-d3-js-ie-safari-an
 
