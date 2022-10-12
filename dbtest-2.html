@@ -1121,14 +1121,13 @@ var solution = [];
    $('#param-learningrate').bind('input', function () { $('#param-learningrate-value').text($('#param-learningrate').val()); });
    $('#param-maxiter').bind('input', function () { $('#param-maxiter-value').text($('#param-maxiter').val()); });
 
-function reinit() {
-init(getData());
+
+  function reinit() {
+  init(getData());
 }		
-		
 		
    function downloadSvg() {
 // Download sag courtesy of https://stackoverflow.com/questions/23218174/how-do-i-save-export-an-svg-file-after-creating-an-svg-with-d3-js-ie-safari-an
-
 svg = document.getElementById('embed').firstElementChild
 var serializer = new XMLSerializer();
 var source = serializer.serializeToString(svg);
@@ -1142,7 +1141,6 @@ if(!source.match(/^<svg[^>]+"http\:\/\/www\.w3\.org\/1999\/xlink"/)){
 
 //add xml declaration
 source = '<?xml version="1.0" standalone="no"?>\r\n' + source;
-
 //convert svg source to URI data scheme.
 var svgUrl = "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(source);
 
@@ -1154,9 +1152,7 @@ downloadLink.click();
 document.body.removeChild(downloadLink);
    }
 
-
 var opt; var step_counter; var final_dataset; var max_counter; var dists; var all_labels; var svg; var timeout; var runner; var tsne;
-
 // code that is executed when page is loaded
 $(document).ready(function() {
     timeout = setTimeout(function() {
